@@ -24,6 +24,7 @@ import com.example.androidtest.ui.theme.AndroidTestTheme
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,8 +36,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize()
                 ) { innerPadding ->
                     GreetingImage(
-                        message = "Happy Birthday Roi",
-                        from = "Capivara",
+                        message = stringResource(R.string.happy_birthday_text),
+                        from = stringResource(R.string.signature_text),
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -62,7 +63,7 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
             fontSize = 36.sp,
             modifier = Modifier
                 .padding(16.dp)
-                .align(alignment = Alignment.End)
+                .align(alignment = Alignment.CenterHorizontally)
         )
     }
 }
@@ -91,6 +92,9 @@ fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) 
 @Composable
 fun GreetingPreview() {
     AndroidTestTheme {
-        GreetingImage(message = "Happy Birthday Roi", from = "Capivara")
+        GreetingImage(
+            message = stringResource(R.string.happy_birthday_text),
+            from = stringResource(R.string.signature_text)
+        )
     }
 }

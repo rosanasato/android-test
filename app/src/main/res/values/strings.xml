@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android Test</string>
+    <string name="happy_birthday_text">Happy Birthday Roi</string>
+    <string name="signature_text">Capivara</string>
 </resources>
